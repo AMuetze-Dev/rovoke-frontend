@@ -1,0 +1,14 @@
+.header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    height: 620px;
+    margin-bottom: 100px;
+}
+
+.header h1 {
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 600;
+}

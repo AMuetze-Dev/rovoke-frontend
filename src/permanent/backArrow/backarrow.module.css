@@ -1,0 +1,13 @@
+.back-arrow {
+    position: fixed;
+    top: 80px;
+    left: 10px;
+    font-size: 2.5rem;
+    z-index: 102;
+}
+
+@media screen and (max-width: 991px) {
+    .back-arrow {
+        display: none;
+    }
+}

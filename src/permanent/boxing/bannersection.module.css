@@ -1,0 +1,29 @@
+.banner-section {
+    padding: 0 80px;
+    margin: 0 30px;
+
+    background-color: var(--light-contrast-color);
+}
+
+.banner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 0 80px;
+}
+
+@media screen and (max-width: 991px) {
+    .banner-section {
+        padding: 0;
+    }
+}
+
+.content {
+    padding: 120px 0;
+
+    width: 100%;
+    max-width: 1140px;
+
+    text-align: center;
+}

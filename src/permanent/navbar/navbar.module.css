@@ -1,0 +1,144 @@
+nav {
+    position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+
+    padding: 30px 50px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+
+    background-color: var(--light-color);
+}
+
+nav .logo a {
+    padding: 16px 0px;
+    font-size: 1.5rem;
+    line-height: 26px;
+    font-family: "Montserrat", sans-serif;
+    text-transform: uppercase;
+
+    color: var(--dark-contrast-color);
+}
+
+.submenu-toggle {
+    display: none;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    list-style: none;
+}
+
+nav ul li {
+    padding: 9px 20px;
+
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 26px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+
+    opacity: 0.6;
+}
+
+.list-toggle {
+    display: none;
+}
+
+@media screen and (max-width: 991px) {
+    .list-toggle {
+        display: block;
+    }
+
+    .submenu-toggle {
+        display: block;
+        width: 20px;
+        height: 20px;
+
+        cursor: pointer;
+        transition: all 0.2s ease-in-out;
+    }
+
+    .submenu-toggle-icon,
+    .submenu-toggle-icon::after {
+        display: block;
+        width: 100%;
+
+        border-radius: 10px;
+        background-color: var(--dark-contrast-color);
+
+        transition: all 0.2s ease-in-out;
+    }
+
+    .submenu-toggle-icon {
+        height: 10%;
+        transform: translateY(4px);
+    }
+
+    .submenu-toggle-icon::after {
+        content: "";
+        height: 100%;
+        transform: translateY(8px);
+    }
+
+    .submenu-toggle-icon.active {
+        transform: translateY(8px) rotateZ(45deg);
+    }
+
+    .submenu-toggle-icon.active::after {
+        transform: translateY(0) rotateZ(-90deg);
+    }
+
+    .submenu,
+    nav button {
+        display: none;
+    }
+
+    .submenu.show {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+
+        display: flex;
+        justify-content: space-around;
+        flex-direction: column;
+    }
+
+    .submenu.show li {
+        width: 100%;
+        text-align: center;
+        color: var(--dark-contrast-color);
+        background-color: var(--light-color);
+        font-size: 16px;
+        opacity: 0;
+    }
+
+    .submenu.show li:hover {
+        background-color: var(--light-contrast-color);
+        transform-origin: top center;
+    }
+
+    @keyframes scaleZ {
+        0% {
+            opacity: 0;
+            transform: scale(0);
+        }
+
+        80% {
+            transform: scale(1.07);
+        }
+
+        100% {
+            opacity: 1;
+            transform: scale(1);
+        }
+    }
+}

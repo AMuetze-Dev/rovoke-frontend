@@ -1,0 +1,29 @@
+.header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    height: 620px;
+    margin-bottom: 100px;
+}
+
+.content {
+    padding: 50px 0;
+    margin-bottom: 20px;
+
+    width: 70%;
+    max-width: 1140px;
+
+    text-align: center;
+}
+
+.text {
+    margin: 0 auto 35px auto;
+
+    width: 80%;
+}
+
+.text h1 {
+    font-family: "Montserrat",sans-serif;
+    text-transform: uppercase;
+}

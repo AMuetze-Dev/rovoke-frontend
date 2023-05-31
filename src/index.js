@@ -1,17 +1,40 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import { StrictMode } from "react";
+import ReactDOM from "react-dom/client";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import useLocalStorage from "use-local-storage";
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-);
+import "./theme.css"
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+import Navbar from "./permanent/navbar/Navbar";
+import BackArrow from "./permanent/backArrow/BackArrow"
+import Landing from "./subpages/landing/Landing";
+import Recipebook from "./subpages/recipebook/Recipebook";
+import Footer from "./permanent/footer/Footer"
+
+ReactDOM.createRoot(document.getElementById("root")).render(<App />);
+
+function App() {
+
+  const defaultDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+  const [theme, setTheme] = useLocalStorage("theme", defaultDark ? "dark" : "light");
+  const switchTheme = () => setTheme(theme === "light" ? "dark" : "light");
+  document.body.setAttribute("data-theme", theme);
+
+  return (
+    <>
+      <StrictMode>
+        <BrowserRouter>
+          <Navbar />
+          <BackArrow />
+          <div className="body">
+            <Routes>
+              <Route path="/" element={<Landing />} />
+              <Route path="/rezeptbuch/*" element={<Recipebook />} />
+            </Routes>
+          </div>
+          <Footer switchTheme={switchTheme} />
+        </BrowserRouter>
+      </StrictMode>
+    </>
+  )
+}
