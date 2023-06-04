@@ -29,7 +29,7 @@ function App() {
           <div className="body">
             <Routes>
               <Route path="/" element={<Landing />} />
-              <Route path="/rezeptbuch/*" element={<Recipebook />} />
+              <Route path="/Rezeptbuch/*" element={<Recipebook />} />
             </Routes>
           </div>
           <Footer switchTheme={switchTheme} />

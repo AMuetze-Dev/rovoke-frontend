@@ -1,0 +1,28 @@
+.wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.wrapper input {
+    width: 100%;
+}
+
+.wrapper .item-wrapper {
+    width: 45%;
+    display: flex;
+}
+
+@media screen and (max-width: 991px) {
+    .wrapper .item-wrapper {
+        width: 60%;
+    }
+}
+
+@media screen and (max-width: 715px) {
+    .wrapper .item-wrapper {
+        width: 100%;
+    }
+}

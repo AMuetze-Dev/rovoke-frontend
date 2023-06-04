@@ -1,0 +1,79 @@
+.wrapper {
+    width: 100%;
+}
+
+.wrapper hr {
+    margin: 10px 5px;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.options {
+    width: 100%;
+    display: flex;
+    align-items: stretch;
+}
+
+.options>button {
+    width: 100%;
+    margin: 0 10px;
+}
+
+.ingredient-wrapper {
+    padding-bottom: 20px;
+    width: 100%;
+}
+
+.ingredient-wrapper input {
+    width: 100%;
+}
+
+.head-wrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+.name {
+    display: flex;
+    width: 100%;
+}
+
+.ingredient-wrapper>*>* {
+    margin: 2px;
+    width: 100%;
+}
+
+.macro-wrapper {
+    width: 100%;
+    display: flex;
+}
+
+@media screen and (min-width: 992px) {
+    .macro {
+        padding: 0px 5px;
+    }
+
+    .macro-wrapper .macro:first-child {
+        padding-left: 0;
+    }
+    
+    .macro-wrapper .macro:last-child {
+        padding-right: 0;
+    }
+}
+
+@media screen and (max-width: 991px) {
+    .macro-wrapper {
+        flex-direction: column;
+    }
+}
+
+.macro {
+    width: 100%;
+}
+

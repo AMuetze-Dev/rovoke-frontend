@@ -66,6 +66,10 @@ button.dark, input.dark {
     transition: background-color 400ms ease, opacity 400ms ease, color 400ms ease;
 }
 
+body {
+    background-color: var(--light-color);
+}
+
 .body {
     padding: 0 30px;
     background-color: var(--light-color);
@@ -139,7 +143,7 @@ button {
     letter-spacing: 2px;
 }
 
-input[type="text"] {
+input {
     padding: 12px 25px;
 
     font-size: 14px;
@@ -167,7 +171,9 @@ img {
     grid-column-gap: 16px;
     grid-template-rows: auto auto;
     grid-template-columns: 1fr 1fr;
+    grid-auto-rows: auto;
     grid-auto-columns: 1fr;
+    grid-auto-flow: row;
 
     display: grid;
     align-items: stretch;
